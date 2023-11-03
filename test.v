@@ -1,6 +1,6 @@
 module moore_fsm #(parameter N_STATE=4)(input clk, input reset, input in, output reg out);
 
-reg [3:0] state, next_state;
+reg [1:0] state, next_state;
 
 always @(posedge clk) begin
 		 if (reset) begin
