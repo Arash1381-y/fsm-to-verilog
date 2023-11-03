@@ -91,7 +91,7 @@ class VerilogTransformer:
     def gen_intermediate_signals(self):
         intermediate_signals: str = ""
         # define state and next state
-        nodes_bits_num = len(self.nodes) - 1
+        nodes_bits_num = (len(self.nodes) - 1).bit_length() - 1
         if nodes_bits_num <= 0:
             intermediate_signals += (f"reg {config.INTERMEDIATE_CURRENT_STATE_REG_NAME},"
                                      f" {config.INTERMEDIATE_NEXT_STATE_REG_NAME};\n")
